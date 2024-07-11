@@ -1,0 +1,31 @@
+version: "3"
+
+name: side-projects
+
+services:
+  caddy:
+    container_name: caddy
+    image: caddy
+    restart: on-failure
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy-config:/config
+      - caddy-data:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile
+  workout-tracker-ui:
+    container_name: workout-tracker-ui
+    image: ghcr.io/milindtheengineer/workout-server-ui:v0.0.1
+    restart: on-failure
+  workout-tracker-server:
+    container_name: workout-tracker-server
+    image: ghcr.io/milindtheengineer/workout-tracker-server:v0.0.5@sha256:70a19e7c30f3974a28ba6b3de5fb71575cbbe35759c1092f9f106abd2c05d8aa
+    restart: on-failure
+    volumes:
+      - /etc/mydb:/etc/mydb
+    environment:
+      - SERVER_DBPATH=/etc/mydb
+volumes:
+  caddy-config:
+  caddy-data:

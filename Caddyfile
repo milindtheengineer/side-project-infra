@@ -1,0 +1,8 @@
+www.workout-tracker.13059596.xyz,
+workout-tracker.13059596.xyz {
+	reverse_proxy workout-tracker-ui:80
+}
+www.workout-tracker-server.13059596.xyz,
+workout-tracker-server.13059596.xyz {
+	reverse_proxy workout-tracker-server:8080
+}
