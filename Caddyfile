@@ -6,3 +6,15 @@ www.workout-tracker-server.13059596.xyz,
 workout-tracker-server.13059596.xyz {
 	reverse_proxy workout-tracker-server:8080
 }
+www.maps.13059596.xyz,
+maps.13059596.xyz {
+     	reverse_proxy maps:8080
+}
+www.maps-ui.13059596.xyz,
+maps-ui.13059596.xyz {
+        reverse_proxy maps-ui:80
+}
+www.stats.13059596.xyz,
+stats.13059596.xyz {
+        reverse_proxy host.docker.internal:5000
+}
