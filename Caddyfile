@@ -1,20 +1,41 @@
-www.workout-tracker.13059596.xyz,
-workout-tracker.13059596.xyz {
+www.chargeandchill.info,
+chargeandchill.info {
+	root * /etc/test
+	file_server
+}
+www.workout-tracker.milindjuttiga.com,
+workout-tracker.milindjuttiga.com {
 	reverse_proxy workout-tracker-ui:80
 }
-www.workout-tracker-server.13059596.xyz,
-workout-tracker-server.13059596.xyz {
+www.workout-tracker-server.milindjuttiga.com,
+workout-tracker-server.milindjuttiga.com {
 	reverse_proxy workout-tracker-server:8080
 }
-www.maps.13059596.xyz,
-maps.13059596.xyz {
+www.server.chargeandchill.info,
+server.chargeandchill.info {
+        reverse_proxy maps-server:8080
+}
+www.pmtiles.chargeandchill.info,
+pmtiles.chargeandchill.info {
      	reverse_proxy maps:8080
 }
-www.maps-ui.13059596.xyz,
-maps-ui.13059596.xyz {
+www.maps.chargeandchill.info,
+maps.chargeandchill.info {
         reverse_proxy maps-ui:80
+}
+www.dockerstats.milindjuttiga.com,
+dockerstats.milindjuttiga.com {
+        reverse_proxy dozzle:8080
 }
 www.stats.13059596.xyz,
 stats.13059596.xyz {
+        reverse_proxy host.docker.internal:5000
+}
+www.chargestats.13059596.xyz,
+chargestats.13059596.xyz {
+        reverse_proxy host.docker.internal:5000
+}
+www.stats.chargeandchill.info,
+stats.chargeandchill.info {
         reverse_proxy host.docker.internal:5000
 }
